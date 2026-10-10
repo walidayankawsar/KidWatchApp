@@ -40,6 +40,8 @@ jobs:
     - name: Build APK with Buildozer
       run: |
         buildozer -v android debug
+      env:
+        P4A_RELEASE_STORAGE: https://github.com/kivy/python-for-android/releases/download
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
