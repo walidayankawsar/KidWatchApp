@@ -37,9 +37,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install "cython<3.0.0" buildozer virtualenv
 
-    - name: Clean Buildozer Cache & Build
+    - name: Clean and Build APK
       run: |
-        buildozer clean
+        rm -rf .buildozer bin
         buildozer -v android debug
       env:
         P4A_RELEASE_STORAGE: https://github.com/kivy/python-for-android/releases/download
